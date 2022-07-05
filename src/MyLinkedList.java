@@ -7,9 +7,8 @@ public class MyLinkedList<HashRecord> extends LinkedList<HashRecord> {
 
         if(o == this) return true;
 
-        if(o == null) return false;
+        if(o == null || this.getClass() != o.getClass()) return false;
 
-        if(this.getClass() != o.getClass()) return false;
         MyLinkedList<HashRecord> arrayList = (MyLinkedList<HashRecord>) o;
 
         if(arrayList.size() != this.size()) return false;
@@ -19,6 +18,12 @@ public class MyLinkedList<HashRecord> extends LinkedList<HashRecord> {
                 if (!h.equals(h1)) return false;
             }
         }
+
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

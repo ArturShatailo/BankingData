@@ -22,6 +22,8 @@ public class Index{
         return (CODE + indexCode.hashCode() - (name.hashCode() / indexCode.hashCode()));
     }
 
+    //Coding of this object hashCode using 'current time' and exponentiation
+    //to provide an extra level of abstraction and safety of system.
     public String hideCode() {
 
         StringBuilder shc = new StringBuilder();
@@ -37,6 +39,11 @@ public class Index{
         }
 
         return String.valueOf(shc);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     @Override

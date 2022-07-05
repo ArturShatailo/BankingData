@@ -22,4 +22,9 @@ public class HashRecord {
 
         return hr.index.equals(index);
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
